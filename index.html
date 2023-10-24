@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Digital Clock</title>
+    <link rel = "stylesheet" href = "stylesheet.css">
+</head>
+<body>
+    <div class="wrapper">
+      <div class="di" >
+        <div id="time" >
+          <p>  12:00:00  </p>
+        </div>
+      </div>
+    </div>
+  <script>
+    setInterval( ()=>{
+     const time = document.querySelector("#time");
+     let date = new Date();
+     let hours = date.getHours();
+     let minutes = date.getMinutes();
+     let seconds = date.getSeconds();
+     if (hours > 12){
+      hours = hours - 12;
+     }
+     if(minutes < 1 ){
+      minutes = "0" + minutes;
+     }
+     if (seconds < 10){
+      seconds = "0" + seconds;
+     }
+     time.textContent = hours + ":" + minutes + ":" + seconds;
+    });
+  </script>
+   
+</body>
+</html>
